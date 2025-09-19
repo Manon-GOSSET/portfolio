@@ -1676,6 +1676,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     downloadName: 'concept.png'
                 },
                 {
+                    src: 'Links/Cuisine/concept1.png',
+                    title: 'Concept 1',
+                    downloadUrl: 'Links/Cuisine/concept1.png',
+                    downloadName: 'concept1.png'
+                },
+                {
                     src: 'Links/Cuisine/concept2.png',
                     title: 'Concept 2',
                     downloadUrl: 'Links/Cuisine/concept2.png',
@@ -1893,6 +1899,82 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let currentProjectSection = null;
     
+    // Fonction pour afficher une image en zoom
+    function showZoomedImage(imageSrc, imageTitle) {
+        // Créer l'overlay de zoom s'il n'existe pas
+        let zoomOverlay = document.getElementById('zoomOverlay');
+        if (!zoomOverlay) {
+            zoomOverlay = document.createElement('div');
+            zoomOverlay.id = 'zoomOverlay';
+            zoomOverlay.className = 'zoom-overlay';
+            document.body.appendChild(zoomOverlay);
+        }
+        
+        // Mettre à jour le contenu
+        zoomOverlay.innerHTML = `
+            <div class="zoom-container">
+                <div class="zoom-header">
+                    <h3 class="zoom-title">${imageTitle}</h3>
+                </div>
+                <div class="zoom-content">
+                    <div class="zoom-image-wrapper">
+                        <img src="${imageSrc}" alt="${imageTitle}" class="zoom-image">
+                        <button class="zoom-close" id="zoomClose" title="Fermer">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Ajouter les gestionnaires d'événements après création du DOM
+        setTimeout(() => {
+            const zoomClose = document.getElementById('zoomClose');
+            if (zoomClose) {
+                zoomClose.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeZoomedImage();
+                });
+            }
+            
+            zoomOverlay.addEventListener('click', (e) => {
+                if (e.target === zoomOverlay || e.target.classList.contains('zoom-container')) {
+                    closeZoomedImage();
+                }
+            });
+            
+            // Fermer avec la touche Échap
+            const handleEscape = (e) => {
+                if (e.key === 'Escape' && zoomOverlay.classList.contains('active')) {
+                    closeZoomedImage();
+                    document.removeEventListener('keydown', handleEscape);
+                }
+            };
+            document.addEventListener('keydown', handleEscape);
+        }, 10);
+        
+        // Afficher l'overlay
+        zoomOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Fonction pour fermer l'image zoomée
+    function closeZoomedImage() {
+        const zoomOverlay = document.getElementById('zoomOverlay');
+        if (zoomOverlay) {
+            zoomOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            
+            // Nettoyer après l'animation
+            setTimeout(() => {
+                if (zoomOverlay && !zoomOverlay.classList.contains('active')) {
+                    zoomOverlay.remove();
+                }
+            }, 300);
+        }
+    }
+    
     // Fonction pour ouvrir le modal
     function openModal(section) {
         console.log('openModal called with section:', section);
@@ -1988,6 +2070,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     img.src = imageSrc;
                     img.alt = imageTitle;
                     img.className = 'modal-image';
+                    
+                    // Ajouter la fonctionnalité de zoom au clic
+                    img.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        showZoomedImage(imageSrc, imageTitle);
+                    });
+                    
                     imageWrapper.appendChild(img);
                     
                     // Ajouter un titre sur l'image
@@ -2298,123 +2388,129 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Observer pour la section Contact - Animations en cascade comme la première section
-    const contactSection = document.getElementById('contact-section');
-    if (contactSection) {
-        let isContactAnimating = false;
-        let lastContactAnimationTime = 0;
+    // Fonction d'animation pour la section Contact
+    function animateContactElements() {
+        // Animation du titre CONTACT
+        setTimeout(() => {
+            const portfolioTitle = document.querySelector('#contact-section .portfolio-title');
+            const portfolioLine = document.querySelector('#contact-section .portfolio-line');
+            
+            if (portfolioTitle) {
+                portfolioTitle.style.opacity = '0';
+                portfolioTitle.style.transform = 'translateY(20px)';
+                portfolioTitle.style.transition = 'all 0.8s ease-out';
+                
+                setTimeout(() => {
+                    portfolioTitle.style.opacity = '1';
+                    portfolioTitle.style.transform = 'translateY(0)';
+                }, 100);
+            }
+            
+            if (portfolioLine) {
+                portfolioLine.style.width = '0';
+                portfolioLine.style.transition = 'width 1s ease-out';
+                
+                setTimeout(() => {
+                    portfolioLine.style.width = '200px';
+                }, 100);
+            }
+        }, 200);
         
+        // Animation des lignes de contact
+        setTimeout(() => {
+            const contactLines = document.querySelectorAll('#contact-section .contact-line');
+            contactLines.forEach((line, index) => {
+                line.style.opacity = '0';
+                line.style.transform = 'scale(0)';
+                line.style.transition = 'all 0.8s ease-out';
+                
+                setTimeout(() => {
+                    line.style.opacity = '1';
+                    line.style.transform = 'scale(1)';
+                }, 100 + (index * 200));
+            });
+        }, 400);
+        
+        // Animation de la ligne d'information de contact
+        setTimeout(() => {
+            const contactInfoLine = document.querySelector('#contact-section .contact-info-line');
+            if (contactInfoLine) {
+                contactInfoLine.style.width = '0';
+                contactInfoLine.style.transition = 'width 1s ease-out';
+                
+                setTimeout(() => {
+                    contactInfoLine.style.width = '120px';
+                }, 100);
+            }
+        }, 600);
+        
+        // Animation des éléments de contact
+        setTimeout(() => {
+            const contactDetailItems = document.querySelectorAll('#contact-section .contact-detail-item');
+            contactDetailItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-30px)';
+                item.style.transition = 'all 0.6s ease-out';
+                
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, 100 + (index * 200));
+            });
+        }, 800);
+        
+        // Animation du message "Merci"
+        setTimeout(() => {
+            const thankYouText = document.querySelector('#contact-section .contact-thank-you-text');
+            const thankYouLine = document.querySelector('#contact-section .contact-thank-you-line');
+            
+            if (thankYouText) {
+                thankYouText.style.opacity = '0';
+                thankYouText.style.transform = 'translateY(20px)';
+                thankYouText.style.transition = 'all 0.8s ease-out';
+                
+                setTimeout(() => {
+                    thankYouText.style.opacity = '1';
+                    thankYouText.style.transform = 'translateY(0)';
+                }, 100);
+            }
+            
+            if (thankYouLine) {
+                thankYouLine.style.width = '0';
+                thankYouLine.style.transition = 'width 1s ease-out';
+                
+                setTimeout(() => {
+                    thankYouLine.style.width = '80px';
+                }, 100);
+            }
+        }, 1600);
+    }
+    
+    // Observer pour la section Contact - Animation à chaque visite comme la première section
+    const contactSection = document.getElementById('contact-section');
+    let isContactAnimating = false;
+    let lastContactAnimationTime = 0;
+    
+    if (contactSection) {
         const contactObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
+                if (entry.isIntersecting && !isContactAnimating) {
                     const currentTime = Date.now();
-                    
-                    // Vérifier si on peut déclencher l'animation (pas en cours et délai respecté)
-                    if (!isContactAnimating && (currentTime - lastContactAnimationTime) > 2000) {
-                        isContactAnimating = true;
-                        lastContactAnimationTime = currentTime;
-                        
-                        // Reset des styles initiaux
-                        const portfolioTitle = entry.target.querySelector('.portfolio-title');
-                        const portfolioLine = entry.target.querySelector('.portfolio-line');
-                        const contactInfoLine = entry.target.querySelector('.contact-info-line');
-                        const contactDetailItems = entry.target.querySelectorAll('.contact-detail-item');
-                        const thankYouText = entry.target.querySelector('.contact-thank-you-text');
-                        const thankYouLine = entry.target.querySelector('.contact-thank-you-line');
-                        
-                        // Reset des styles initiaux
-                        if (portfolioTitle) {
-                            portfolioTitle.style.opacity = '0';
-                            portfolioTitle.style.transform = 'translateY(20px)';
-                            portfolioTitle.style.transition = 'all 0.6s ease-out';
-                        }
-                        
-                        if (portfolioLine) {
-                            portfolioLine.style.opacity = '0';
-                            portfolioLine.style.transform = 'scaleX(0)';
-                            portfolioLine.style.transition = 'all 0.8s ease-out';
-                        }
-                        
-                        if (contactInfoLine) {
-                            contactInfoLine.style.opacity = '0';
-                            contactInfoLine.style.transform = 'scaleX(0)';
-                            contactInfoLine.style.transition = 'all 0.8s ease-out';
-                        }
-                        
-                        // Reset des éléments de contact
-                        contactDetailItems.forEach((item) => {
-                            item.classList.remove('animate-in', 'contact-visible');
-                            item.classList.add('animate-ready');
-                        });
-                        
-                        if (thankYouText) {
-                            thankYouText.style.opacity = '0';
-                            thankYouText.style.transform = 'translateY(20px)';
-                            thankYouText.style.transition = 'all 0.6s ease-out';
-                        }
-                        
-                        if (thankYouLine) {
-                            thankYouLine.style.opacity = '0';
-                            thankYouLine.style.transform = 'scaleX(0)';
-                            thankYouLine.style.transition = 'all 0.8s ease-out';
-                        }
-                        
-                        // Déclencher les animations
-                        setTimeout(() => {
-                            // Animation du titre CONTACT
-                            if (portfolioTitle) {
-                                setTimeout(() => {
-                                    portfolioTitle.style.opacity = '1';
-                                    portfolioTitle.style.transform = 'translateY(0)';
-                                }, 200);
-                            }
-                            
-                            // Animation de la ligne du titre
-                            if (portfolioLine) {
-                                setTimeout(() => {
-                                    portfolioLine.style.opacity = '1';
-                                    portfolioLine.style.transform = 'scaleX(1)';
-                                }, 400);
-                            }
-                            
-                            // Animation de la ligne de contact
-                            if (contactInfoLine) {
-                                setTimeout(() => {
-                                    contactInfoLine.style.opacity = '1';
-                                    contactInfoLine.style.transform = 'scaleX(1)';
-                                }, 600);
-                            }
-                            
-                            // Animation des éléments de contact en cascade avec délai
-                            contactDetailItems.forEach((item, index) => {
-                                setTimeout(() => {
-                                    item.classList.remove('animate-ready');
-                                    item.classList.add('animate-in');
-                                }, 800 + (index * 200));
-                            });
-                            
-                            // Animation du message "Merci"
-                            if (thankYouText) {
-                                setTimeout(() => {
-                                    thankYouText.style.opacity = '1';
-                                    thankYouText.style.transform = 'translateY(0)';
-                                }, 1600);
-                            }
-                            
-                            // Animation de la ligne "Merci"
-                            if (thankYouLine) {
-                                setTimeout(() => {
-                                    thankYouLine.style.opacity = '1';
-                                    thankYouLine.style.transform = 'scaleX(1)';
-                                }, 1800);
-                            }
-                            
-                            // Reset du flag d'animation après 3 secondes
-                            setTimeout(() => {
-                                isContactAnimating = false;
-                            }, 3000);
-                        }, 100);
+                    // Éviter les animations trop rapprochées (minimum 2 secondes)
+                    if (currentTime - lastContactAnimationTime < 2000) {
+                        return;
                     }
+                    
+                    isContactAnimating = true;
+                    lastContactAnimationTime = currentTime;
+                    
+                    // Lancer l'animation
+                    animateContactElements();
+                    
+                    // Réinitialiser le flag après l'animation (3 secondes)
+                    setTimeout(() => {
+                        isContactAnimating = false;
+                    }, 3000);
                 }
             });
         }, {

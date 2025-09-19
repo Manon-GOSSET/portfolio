@@ -179,17 +179,17 @@ html {
     position: absolute;
     width: 1px;
     background-color: #000000;
-    z-index: 1;
+    z-index: 10;
 }
 
 .vertical-line.left {
-    left: 0;
+    left: 10px;
     top: 0;
     height: 50vh;
 }
 
 .vertical-line.right {
-    right: 0;
+    right: 10px;
     bottom: 0;
     height: 50vh;
     top: auto;
@@ -200,20 +200,22 @@ html {
     height: 1px;
     background-color: #000000;
     position: absolute;
+    z-index: 10;
 }
 
 .portfolio-line {
     width: 200px;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+    top: 100%;
+    left: 10px;
+    margin-top: 5px;
 }
 
 .name-line {
     width: 200px;
-    bottom: 0;
-    right: 0;
+    top: -5px;
+    right: 10px;
 }
+
 
 /* Contenu principal */
 .content {
@@ -383,6 +385,17 @@ html {
 }
 
 /* Animations pour la section Contact */
+.contact-line {
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.contact-line.animate-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
 .contact-detail-item {
     opacity: 1;
     transform: translateX(0);
@@ -527,6 +540,7 @@ html {
     .name-line {
         width: 180px;
     }
+    
     
     .side-navbar {
         right: 20px;
@@ -674,6 +688,7 @@ html {
         width: 150px;
     }
     
+    
     .vertical-line.left,
     .vertical-line.right {
         height: 40vh;
@@ -768,6 +783,7 @@ html {
     .name-line {
         width: 100px;
     }
+    
     
     .side-navbar {
         right: 10px;
@@ -2979,6 +2995,7 @@ a, button, .nav-arrow, .dot, .project-card {
     border-radius: 8px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .modal-image:hover {
@@ -3356,5 +3373,186 @@ a, button, .nav-arrow, .dot, .project-card {
         width: 40px;
         height: 40px;
         font-size: 1rem;
+    }
+}
+
+/* Styles pour l'overlay de zoom */
+.zoom-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100000;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    cursor: pointer;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.zoom-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.zoom-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
+
+.zoom-header {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    z-index: 100001;
+}
+
+.zoom-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.zoom-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    z-index: 100001;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.zoom-close:hover {
+    background: rgba(255, 0, 0, 0.9);
+    border-color: #ffffff;
+    transform: scale(1.15);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+}
+
+.zoom-close:active {
+    transform: scale(0.95);
+}
+
+.zoom-content {
+    width: 100%;
+    height: calc(100vh - 120px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex: 1;
+    padding: 80px 20px 20px 20px;
+    box-sizing: border-box;
+}
+
+.zoom-image-wrapper {
+    position: relative;
+    display: inline-block;
+    max-width: 95vw;
+    max-height: 85vh;
+    height: 100%;
+}
+
+.zoom-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    cursor: default;
+    pointer-events: none;
+    display: block;
+}
+
+.zoom-image:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive pour l'overlay de zoom */
+@media (max-width: 768px) {
+    .zoom-overlay {
+        padding: 15px;
+    }
+    
+    .zoom-title {
+        font-size: 1.5rem;
+    }
+    
+    .zoom-close {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        top: 12px;
+        right: 12px;
+    }
+    
+    .zoom-content {
+        height: calc(100vh - 100px);
+        padding: 70px 15px 15px 15px;
+    }
+    
+    .zoom-image-wrapper {
+        max-width: 92vw;
+        max-height: 80vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .zoom-overlay {
+        padding: 10px;
+    }
+    
+    .zoom-title {
+        font-size: 1.2rem;
+    }
+    
+    .zoom-close {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .zoom-content {
+        height: calc(100vh - 80px);
+        padding: 60px 10px 10px 10px;
+    }
+    
+    .zoom-image-wrapper {
+        max-width: 90vw;
+        max-height: 75vh;
     }
 }
