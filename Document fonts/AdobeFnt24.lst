@@ -1,0 +1,145 @@
+%!Adobe-FontList 1.24
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:/Users/manongosset/Library/Mobile Documents/com~apple~CloudDocs/BOOK CV/Dossier PortFolio Architecte d'intérieur Manon GOSSET/Document fonts/AdobeFnt24.lst
+FileLength:3313
+FileModTime:779378779
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:AestheticRomance-Regular
+FamilyName:Aesthetic Romance
+StyleName:Regular
+MenuName:Aesthetic Romance
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Aesthetic Romance Regular
+WritingScript:Roman
+OutlineFileName:/Users/manongosset/Library/Mobile Documents/com~apple~CloudDocs/BOOK CV/Dossier PortFolio Architecte d'intérieur Manon GOSSET/Document fonts/Aesthetic Romance.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:158068
+FileModTime:697586908
+NameArray:0,Mac,4,Aesthetic Romance Regular
+NameArray:0,Win,1,Aesthetic Romance
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:ItcEras-Demi
+FamilyName:ITC Eras Demi
+StyleName:Regular
+MenuName:ITC Eras Demi
+StyleBits:0
+WeightClass:500
+WidthClass:5
+AngleClass:1
+FullName:ITC Eras Demi
+WritingScript:Roman
+OutlineFileName:/Users/manongosset/Library/Mobile Documents/com~apple~CloudDocs/BOOK CV/Dossier PortFolio Architecte d'intérieur Manon GOSSET/Document fonts/ITC Eras Demi Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:26720
+FileModTime:650160734
+NameArray:0,Mac,4,ITC Eras Demi
+NameArray:0,Win,1,ITC Eras Demi
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:ItcEras-Light
+FamilyName:ITC Eras Light
+StyleName:Regular
+MenuName:ITC Eras Light
+StyleBits:0
+WeightClass:300
+WidthClass:5
+AngleClass:1
+FullName:ITC Eras Light
+WritingScript:Roman
+OutlineFileName:/Users/manongosset/Library/Mobile Documents/com~apple~CloudDocs/BOOK CV/Dossier PortFolio Architecte d'intérieur Manon GOSSET/Document fonts/ITC Eras Light Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:27792
+FileModTime:650160732
+NameArray:0,Mac,4,ITC Eras Light
+NameArray:0,Win,1,ITC Eras Light
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:ItcEras-Medium
+FamilyName:ITC Eras
+StyleName:Medium
+MenuName:ITC Eras
+StyleBits:0
+WeightClass:500
+WidthClass:5
+AngleClass:1
+FullName:ITC Eras Medium
+WritingScript:Roman
+OutlineFileName:/Users/manongosset/Library/Mobile Documents/com~apple~CloudDocs/BOOK CV/Dossier PortFolio Architecte d'intérieur Manon GOSSET/Document fonts/ITC Eras Medium.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:26300
+FileModTime:650160760
+NameArray:0,Mac,4,ITC Eras Medium
+NameArray:0,Win,1,ITC Eras
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:MinionPro-Regular
+FamilyName:Minion Pro
+StyleName:Regular
+MenuName:Minion Pro
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Minion Pro
+WritingScript:Roman
+OutlineFileName:/Users/manongosset/Library/Mobile Documents/com~apple~CloudDocs/BOOK CV/Dossier PortFolio Architecte d'intérieur Manon GOSSET/Document fonts/MinionPro-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:218640
+FileModTime:752715448
+DesignSize:110
+NameArray:0,Mac,4,Minion Pro
+NameArray:0,Win,1,Minion Pro
+%EndFont
+

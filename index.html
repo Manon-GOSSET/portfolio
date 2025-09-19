@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Manon GOSSET</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Barre de progression -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+        <div class="progress-dots">
+            <div class="dot active" data-section="0"></div>
+            <div class="dot" data-section="1"></div>
+            <div class="dot" data-section="2"></div>
+            <div class="dot" data-section="3"></div>
+            <div class="dot" data-section="4"></div>
+            <div class="dot" data-section="5"></div>
+            <div class="dot" data-section="6"></div>
+            <div class="dot" data-section="7"></div>
+            <div class="dot" data-section="8"></div>
+        </div>
+    </div>
+    
+    <!-- Navbar latérale droite -->
+    <div class="side-navbar">
+        <div class="navbar-toggle">
+            <span class="navbar-icon">☰</span>
+        </div>
+        <div class="navbar-menu">
+            <a href="#section-0" class="navbar-item" data-section="0">
+                <span class="navbar-text">Accueil</span>
+                <div class="navbar-indicator"></div>
+            </a>
+            <a href="#section-1" class="navbar-item" data-section="1">
+                <span class="navbar-text">Projets</span>
+                <div class="navbar-indicator"></div>
+            </a>
+            <a href="#section-2" class="navbar-item" data-section="2">
+                <span class="navbar-text">CV</span>
+                <div class="navbar-indicator"></div>
+            </a>
+            <a href="#section-3" class="navbar-item" data-section="3">
+                <span class="navbar-text">La Chataigne</span>
+                <div class="navbar-indicator"></div>
+            </a>
+            <a href="#nature-section" class="navbar-item" data-section="4">
+                <span class="navbar-text">La Nature</span>
+                <div class="navbar-indicator"></div>
+            </a>
+            <a href="#cuisine-section" class="navbar-item" data-section="5">
+                <span class="navbar-text">Cuisine</span>
+                <div class="navbar-indicator"></div>
+            </a>
+            <a href="#studio-section" class="navbar-item" data-section="6">
+                <span class="navbar-text">Studio</span>
+                <div class="navbar-indicator"></div>
+            </a>
+            <a href="#menuiserie-section" class="navbar-item" data-section="7">
+                <span class="navbar-text">Menuiserie</span>
+                <div class="navbar-indicator"></div>
+            </a>
+            <a href="#contact-section" class="navbar-item" data-section="8">
+                <span class="navbar-text">Contact</span>
+                <div class="navbar-indicator"></div>
+            </a>
+        </div>
+    </div>
+    
+    <div class="container" id="section-0">
+        <!-- Ligne verticale gauche -->
+        <div class="vertical-line left"></div>
+        
+        <!-- Ligne verticale droite -->
+        <div class="vertical-line right"></div>
+        
+        <!-- Contenu principal -->
+        <div class="content">
+            <!-- Section PORTFOLIO -->
+            <div class="portfolio-section">
+                <div class="portfolio-title">PORTFOLIO</div>
+                <div class="horizontal-line portfolio-line"></div>
+            </div>
+            
+            <!-- Section nom et titre -->
+            <div class="name-section">
+                <div class="horizontal-line name-line"></div>
+                <div class="name">Manon <span class="surname">GOSSET</span></div>
+                <div class="title">Architecte d'intérieur</div>
+            </div>
+            
+        </div>
+        
+        <!-- Flèche de navigation vers le bas -->
+        <div class="nav-arrow down" id="arrowDown">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <!-- Section des projets -->
+    <div class="projects-section" id="section-1">
+        <!-- Flèche de navigation vers le haut -->
+        <div class="nav-arrow up" id="arrowUp">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+        
+        <div class="projects-container">
+            <!-- Projet CV -->
+            <div class="project-card" data-project="cv">
+                <div class="project-image">
+                    <img src="Links/IMG_5932.png" alt="Portrait de Manon GOSSET" class="project-img">
+                </div>
+                <div class="project-info">
+                    <a href="#section-2" class="project-link">
+                        <h3 class="project-title">CV</h3>
+                        <p class="project-subtitle">Un peu plus sur moi...</p>
+                        <div class="project-separator"></div>
+                        <span class="page-number">03</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Projet 01 -->
+            <div class="project-card" data-project="01">
+                <div class="project-image">
+                    <img src="Links/Chataigne/chataigne-concept.png" alt="La Chataigne Collective" class="project-img">
+                </div>
+                <div class="project-info">
+                    <a href="#section-3" class="project-link">
+                        <h3 class="project-title">01</h3>
+                        <p class="project-subtitle">La Chataigne Collective</p>
+                        <div class="project-separator"></div>
+                        <span class="page-number">05</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Projet 02 -->
+            <div class="project-card" data-project="02">
+                <div class="project-image">
+                    <img src="Links/Nature/concept1.png" alt="La Nature Hors Echelle" class="project-img">
+                </div>
+                <div class="project-info">
+                    <a href="#nature-section" class="project-link">
+                        <h3 class="project-title">02</h3>
+                        <p class="project-subtitle">La Nature Hors Echelle</p>
+                        <div class="project-separator"></div>
+                        <span class="page-number">11</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Projet 03 -->
+            <div class="project-card" data-project="03">
+                <div class="project-image">
+                    <img src="Links/Cuisine/IMG_6192.png" alt="Cuisine Sur-mesure" class="project-img">
+                </div>
+                <div class="project-info">
+                    <a href="#cuisine-section" class="project-link">
+                        <h3 class="project-title">03</h3>
+                        <p class="project-subtitle">Cuisine sur-mesure</p>
+                        <div class="project-separator"></div>
+                        <span class="page-number">17</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Projet 04 -->
+            <div class="project-card" data-project="04">
+                <div class="project-image">
+                    <img src="Links/Studio/Séjour vue canapé 2 2-min.png" alt="Restructuration d'un studio" class="project-img">
+                </div>
+                <div class="project-info">
+                    <a href="#studio-section" class="project-link">
+                        <h3 class="project-title">04</h3>
+                        <p class="project-subtitle">Restructuration d'un studio</p>
+                        <div class="project-separator"></div>
+                        <span class="page-number">23</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Projet 05 -->
+            <div class="project-card" data-project="05">
+                <div class="project-image">
+                    <img src="Links/Menuiserie/1130b488-7102-406a-8707-1bf0f5658a61.JPG" alt="Menuiserie Sur-mesure" class="project-img">
+                </div>
+                <div class="project-info">
+                    <a href="#menuiserie-section" class="project-link">
+                        <h3 class="project-title">05</h3>
+                        <p class="project-subtitle">Menuiserie sur-mesure</p>
+                        <div class="project-separator"></div>
+                        <span class="page-number">29</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Flèche de navigation vers le bas -->
+        <div class="nav-arrow down" id="arrowDown2">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <!-- Section CV -->
+    <div class="cv-section" id="section-2">
+        <!-- Flèche de navigation vers le haut -->
+        <div class="nav-arrow up" id="arrowUp2">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+        
+        <div class="cv-container">
+            <div class="cv-content">
+                <!-- Colonne 1 - Photo et présentation -->
+                <div class="cv-column-1">
+                    <div class="cv-photo">
+                        <img src="Links/IMG_5932.png" alt="Portrait de Manon GOSSET" class="cv-portrait">
+                    </div>
+                    
+                    <div class="cv-name">Manon GOSSET</div>
+                    
+                    <div class="cv-presentation">
+                        J'ai intégré l'école Autograf en 2020, titulaire d'un Master en 2025, ainsi que mon Bachelor en Design d'Espace obtenu en 2023, j'ai acquis de solides formations dans le domaine l'architecture. Pendant près de 2 ans, j'ai eu l'opportunité de mettre en pratique mes compétences en tant qu'alternante avec une architecte d'intérieur. J'ai également eu l'occasion de travailler dans une entreprise de menuiserie.
+                    </div>
+                    
+                    <div class="cv-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>13 avenue du Tournedos - 77990 - Mauregard</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>manon.gosset77@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-user"></i>
+                            <span>Manon Gosset</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>07.82.33.66.79</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne 2 - Expériences -->
+                <div class="cv-column-2">
+                    <div class="cv-section-block">
+                        <h2 class="cv-section-title cv-collapse-header" data-target="experiences">
+                            EXPERIENCES
+                            <i class="fas fa-chevron-down cv-collapse-icon"></i>
+                        </h2>
+                        <div class="cv-collapse-content" id="experiences">
+                            <div class="experience-item">
+                                <div class="experience-title">Alternance - Architecte d'intérieur</div>
+                                <div class="experience-company">EuroBat - Quincy-Voisins</div>
+                                <div class="experience-dates">2023 - 2025</div>
+                            </div>
+                            <div class="experience-item">
+                                <div class="experience-title">Alternance - Designer d'espace</div>
+                                <div class="experience-company">Hùma Paris - Fontenay-sous-bois</div>
+                                <div class="experience-dates">2022 - 2023</div>
+                            </div>
+                            <div class="experience-item">
+                                <div class="experience-title">Stage - Assistant manager</div>
+                                <div class="experience-company">La Française des jeux - Saint-Witz</div>
+                                <div class="experience-dates">2020</div>
+                            </div>
+                            <div class="experience-item">
+                                <div class="experience-title">Intérimaire - Préparateur de commande</div>
+                                <div class="experience-company">La Française des jeux - Saint-Witz</div>
+                                <div class="experience-dates">2020</div>
+                            </div>
+                            <div class="experience-item">
+                                <div class="experience-title">Stage - Boulangerie</div>
+                                <div class="experience-company">La Boulangerie du Mesnil - Le Mesnil Amelot</div>
+                                <div class="experience-dates">2017</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne 3 - Education -->
+                <div class="cv-column-3">
+                    <div class="cv-section-block">
+                        <h2 class="cv-section-title cv-collapse-header" data-target="education">
+                            EDUCATION
+                            <i class="fas fa-chevron-down cv-collapse-icon"></i>
+                        </h2>
+                        <div class="cv-collapse-content" id="education">
+                            <div class="education-item">
+                                <div class="education-degree">Obtention Master - Architecture d'intérieur</div>
+                                <div class="education-school">Autograf - Paris 20</div>
+                                <div class="education-dates">2023 - 2025</div>
+                            </div>
+                            <div class="education-item">
+                                <div class="education-degree">Obtention Bachelor - Design d'Espace</div>
+                                <div class="education-school">Autograf - Paris 20</div>
+                                <div class="education-dates">2020 - 2023</div>
+                            </div>
+                            <div class="education-item">
+                                <div class="education-degree">1 année BTS - Support à l'action managériale</div>
+                                <div class="education-school">Lycée Jehan - Chelles</div>
+                                <div class="education-dates">2019 - 2020</div>
+                            </div>
+                            <div class="education-item">
+                                <div class="education-degree">1 an - Science Ingénieur</div>
+                                <div class="education-degree">2 ans - STMG RH - Obtention BAC</div>
+                                <div class="education-school">Lycée Charles de Gaulle - Longperrier</div>
+                                <div class="education-dates">2016 - 2019</div>
+                            </div>
+                            <div class="education-item">
+                                <div class="education-degree">Obtention Brevet des Collèges</div>
+                                <div class="education-school">Collège Georges Brassens - Saint-Mard</div>
+                                <div class="education-dates">2012 - 2016</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne 4 - Langues et Compétences -->
+                <div class="cv-column-4">
+                    <div class="cv-section-block">
+                        <h2 class="cv-section-title cv-collapse-header" data-target="languages">
+                            LANGUES
+                            <i class="fas fa-chevron-down cv-collapse-icon"></i>
+                        </h2>
+                        <div class="cv-collapse-content" id="languages">
+                            <div class="languages-list">
+                                <div class="language-item">Français</div>
+                                <div class="language-item">Anglais</div>
+                                <div class="language-item">Thaïlandais</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cv-section-block">
+                        <h2 class="cv-section-title cv-collapse-header" data-target="competences">
+                            COMPETENCES
+                            <i class="fas fa-chevron-down cv-collapse-icon"></i>
+                        </h2>
+                        <div class="cv-collapse-content" id="competences">
+                            <div class="competences-list">
+                                <div class="competence-item">AutoCAD</div>
+                                <div class="competence-item">ArchiCAD</div>
+                                <div class="competence-item">Sketchup</div>
+                                <div class="competence-item">PhotoShop</div>
+                                <div class="competence-item">Illustrator</div>
+                                <div class="competence-item">InDesign</div>
+                                <div class="competence-item">Enscape</div>
+                                <div class="competence-item">Lumion</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Flèche de navigation vers le bas -->
+        <div class="nav-arrow down" id="arrowDown3">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <!-- Section Projet Détaillé - La Chataigne Collective -->
+    <div class="project-detail-section" id="section-3">
+        <!-- Lignes décoratives -->
+        <div class="project-vertical-line project-left-line"></div>
+        <div class="project-vertical-line project-right-line"></div>
+        <div class="project-horizontal-line project-top-line"></div>
+        <div class="project-horizontal-line project-bottom-line"></div>
+        
+        <!-- Flèche de navigation vers le haut -->
+        <div class="nav-arrow up" id="arrowUp3">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+        
+        <div class="project-detail-container">
+            <!-- Colonne gauche - Texte -->
+            <div class="project-text-column">
+                <div class="project-header">
+                    <h1 class="project-number">01</h1>
+                    <h2 class="project-title">La Chataigne Collective</h2>
+                </div>
+                
+                <div class="project-description">
+                    <p class="project-intro">
+                        À Châtenay-sur-Seine, petite commune rurale, une ancienne grange agricole au potentiel inexploité se transforme en un lieu de vie, intergénérationnel, un troisième lieu ancré dans la vie locale.
+                    </p>
+                    
+                    <p class="project-metaphor">
+                        La grange devient une bogue : une enveloppe robuste et protectrice. À l'intérieur, deux volumes organiques se déploient, comme des châtaignes, invitant à l'accueil avec aucune arête vive, des matériaux doux, une lumière absorbée.
+                    </p>
+                    
+                    <p class="project-atmosphere">
+                        On y parle doucement, on s'y croise sans se heurter, comme dans une écorce chaude. Le lieu ne raconte pas seulement une histoire ; il rejoue des gestes, de l'intimité, de la générosité. Ce n'est pas une métaphore. C'est une atmosphère.
+                    </p>
+                </div>
+                
+                <!-- Navigation du projet -->
+                <div class="project-navigation">
+                    <h3 class="project-nav-title project-nav-collapse-header" data-target="project-nav-list">
+                        Explorer le projet
+                        <i class="fas fa-chevron-down project-nav-collapse-icon"></i>
+                    </h3>
+                    <div class="project-nav-list project-nav-collapse-content" id="project-nav-list">
+                        <div class="project-nav-item">
+                            <div class="project-nav-link" data-section="concept">
+                                <span class="nav-number">01</span>
+                                <span class="nav-text">Concept</span>
+                            </div>
+                        </div>
+                        <div class="project-nav-item">
+                            <div class="project-nav-link" data-section="plans">
+                                <span class="nav-number">02</span>
+                                <span class="nav-text">Plans d'étage</span>
+                            </div>
+                        </div>
+                        <div class="project-nav-item">
+                            <div class="project-nav-link" data-section="coupes">
+                                <span class="nav-number">03</span>
+                                <span class="nav-text">Coupes</span>
+                            </div>
+                        </div>
+                        <div class="project-nav-item">
+                            <div class="project-nav-link" data-section="visuels">
+                                <span class="nav-number">04</span>
+                                <span class="nav-text">Visuels 3D</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Colonne droite - Image -->
+            <div class="project-image-column">
+                <div class="project-image-wrapper">
+                    <img src="Links/Chataigne/Enscape_2025-05-27-16-16-34_Scène 33.png" alt="La Chataigne Collective - Vue extérieure" class="project-detail-image">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Flèche de navigation vers le bas -->
+        <div class="nav-arrow down" id="arrowDown4">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <!-- Section La Nature Hors Echelle -->
+    <div class="project-detail-section" id="nature-section">
+        <!-- Lignes décoratives -->
+        <div class="project-vertical-line project-left-line"></div>
+        <div class="project-vertical-line project-right-line"></div>
+        <div class="project-horizontal-line project-top-line"></div>
+        <div class="project-horizontal-line project-bottom-line"></div>
+        
+        <!-- Flèche de navigation vers le haut -->
+        <div class="nav-arrow up" id="arrowUp4">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+        
+        <div class="project-detail-container">
+            <!-- Colonne gauche - Image -->
+            <div class="project-image-column">
+                <div class="project-image-wrapper">
+                    <img src="Links/Nature/Vue de jour.png" alt="La Nature Hors Echelle" class="project-detail-image">
+                </div>
+            </div>
+            
+            <!-- Colonne droite - Texte -->
+            <div class="project-text-column">
+                <div class="project-header">
+                    <h1 class="project-number">02</h1>
+                    <h2 class="project-title">La Nature Hors Echelle</h2>
+                </div>
+                
+                <div class="project-description">
+                    <p class="project-intro">
+                        À Aubervilliers, le projet "La Nature hors échelle" démontre que l'écologie ne doit plus être reléguée au second plan dans notre société. Cette approche architecturale place la nature au cœur de la conception urbaine.
+                    </p>
+                    
+                    <p class="project-metaphor">
+                        L'édifice se caractérise par sa verticalité inspirée de la lumière forestière, créant un jeu d'ombres et de clarté qui forge un lien fort avec la nature environnante. L'entrée mène à une structure monumentale au cœur du projet.
+                    </p>
+                    
+                    <p class="project-atmosphere">
+                        Un jardin émerge comme une forêt régénérante dans l'environnement urbain. L'utilisation de matériaux recyclés provenant des déchets urbains et événementiels parisiens démontre leur potentiel transformateur. Ce n'est pas une métaphore. C'est une atmosphère.
+                    </p>
+                </div>
+                
+                <!-- Navigation du projet -->
+                <div class="project-navigation">
+                    <h3 class="project-nav-title project-nav-collapse-header" data-target="nature-nav-list">
+                        Explorer le projet
+                        <i class="fas fa-chevron-down project-nav-collapse-icon"></i>
+                    </h3>
+                    <div class="project-nav-list project-nav-collapse-content" id="nature-nav-list">
+                        <div class="project-nav-item">
+                            <div class="project-nav-link" data-section="nature-concept">
+                                <span class="nav-number">01</span>
+                                <span class="nav-text">Concept</span>
+                            </div>
+                        </div>
+                        <div class="project-nav-item">
+                            <div class="project-nav-link" data-section="nature-plans">
+                                <span class="nav-number">02</span>
+                                <span class="nav-text">Plans d'étage</span>
+                            </div>
+                        </div>
+                        <div class="project-nav-item">
+                            <div class="project-nav-link" data-section="nature-coupes">
+                                <span class="nav-number">03</span>
+                                <span class="nav-text">Coupes</span>
+                            </div>
+                        </div>
+                        <div class="project-nav-item">
+                            <div class="project-nav-link" data-section="nature-visuels">
+                                <span class="nav-number">04</span>
+                                <span class="nav-text">Visuels 3D</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <!-- Flèche de navigation vers le bas -->
+        <div class="nav-arrow down" id="arrowDown5">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <!-- Section Cuisine sur mesure -->
+    <div class="project-detail-section" id="cuisine-section">
+        <!-- Lignes décoratives -->
+        <div class="project-vertical-line project-left-line"></div>
+        <div class="project-vertical-line project-right-line"></div>
+        <div class="project-horizontal-line project-top-line"></div>
+        <div class="project-horizontal-line project-bottom-line"></div>
+        
+        <!-- Flèche de navigation vers le haut -->
+        <div class="nav-arrow up" id="arrowUp5">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+        
+        <div class="project-detail-container">
+            <!-- Colonne gauche - Texte -->
+            <div class="project-text-column">
+                <div class="project-header">
+                    <h1 class="project-number">03</h1>
+                    <h2 class="project-title">Cuisine sur mesure</h2>
+                </div>
+                
+                <div class="project-description">
+                    <p class="project-intro">
+                        Un jeune propriétaire vient d'emménager dans une ancienne ferme en Champagne-Ardenne, Marne (51). Le bâtiment principal de 100 m² sera entièrement rénové par le propriétaire, alliant authenticité et modernité.
+                    </p>
+                    
+                    <p class="project-metaphor">
+                        Un projet prioritaire : la cuisine de 30 m². Elle comprendra les éléments essentiels, une colonne à épices, un îlot central convivial et un espace café. Le plan prévoit de nombreux rangements, un coin repas rapide et un éclairage chaleureux.
+                    </p>
+                    
+                    <p class="project-atmosphere">
+                        L'objectif est de créer un espace pratique et accueillant pour la vie quotidienne et les moments de partage. Une cuisine qui respire l'authenticité tout en offrant le confort moderne.
+                    </p>
+                </div>
+                
+                <!-- Navigation du projet -->
+                <div class="project-navigation">
+                    <h3 class="project-nav-title project-nav-collapse-header" data-target="cuisine-nav-list">
+                        Explorer le projet
+                        <i class="fas fa-chevron-down project-nav-collapse-icon"></i>
+                    </h3>
+                    <div class="project-nav-list project-nav-collapse-content" id="cuisine-nav-list">
+                        <div class="project-nav-item">
+                            <div class="project-nav-link" data-section="cuisine-concept">
+                                <span class="nav-number">01</span>
+                                <span class="nav-text">Concept</span>
+                            </div>
+                        </div>
+                        <div class="project-nav-item">
+                            <div class="project-nav-link" data-section="cuisine-plans">
+                                <span class="nav-number">02</span>
+                                <span class="nav-text">Plans d'étage</span>
+                            </div>
+                        </div>
+                           <div class="project-nav-item">
+                               <div class="project-nav-link" data-section="cuisine-visuels">
+                                   <span class="nav-number">03</span>
+                                   <span class="nav-text">Rendu réel</span>
+                               </div>
+                           </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Colonne droite - Image -->
+            <div class="project-image-column">
+                <div class="project-image-wrapper">
+                    <img src="Links/Cuisine/IMG_6192.png" alt="Cuisine sur mesure" class="project-detail-image">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Flèche de navigation vers le bas -->
+        <div class="nav-arrow down" id="arrowDown6">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <!-- Section Restructuration d'un studio -->
+    <div class="project-detail-section" id="studio-section">
+        <!-- Lignes décoratives -->
+        <div class="project-vertical-line project-left-line"></div>
+        <div class="project-vertical-line project-right-line"></div>
+        <div class="project-horizontal-line project-top-line"></div>
+        <div class="project-horizontal-line project-bottom-line"></div>
+
+        <!-- Flèche de navigation vers le haut -->
+        <div class="nav-arrow up" id="arrowUp6">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+
+        <div class="project-detail-container">
+            <!-- Colonne gauche - Image -->
+            <div class="project-image-column">
+                <div class="project-image-wrapper">
+                    <img src="Links/Studio/PHOTO_IMMEUBLE_VUE_FACE.png" alt="Restructuration d'un studio" class="project-detail-image">
+                </div>
+            </div>
+            <!-- Colonne droite - Texte -->
+            <div class="project-text-column">
+                <div class="project-header">
+                    <h1 class="project-number">04</h1>
+                    <h2 class="project-title">Restructuration d'un studio</h2>
+                </div>
+                <div class="project-description">
+                    <p class="project-intro">
+                        Un investisseur vient d'acquérir un studio au rez-de-chaussée d'un immeuble du 15ème arrondissement de Paris. Le studio de 23 m² nécessite une restructuration complète et une transformation totale.
+                    </p>
+                    <p class="project-metaphor">
+                        Tout doit être retiré pour reconstruire à neuf. Le studio n'a pas été habité depuis plus de 30 ans et se trouve dans un état très dégradé : revêtements muraux et de sol arrachés, dégradations importantes dues au manque d'aération, infiltrations d'eau et humidité persistante.
+                    </p>
+                    <p class="project-atmosphere">
+                        L'espace actuellement sombre et cloisonné nécessite une réorganisation complète pour le rendre fonctionnel, confortable et conforme aux normes actuelles. L'objectif est de revitaliser le studio, d'exploiter pleinement son potentiel et d'optimiser chaque mètre carré.
+                    </p>
+                </div>
+                <!-- Navigation du projet -->
+                <div class="project-navigation">
+                    <h3 class="project-nav-title project-nav-collapse-header" data-target="studio-nav-list">
+                        Explorer le projet
+                        <i class="fas fa-chevron-down project-nav-collapse-icon"></i>
+                    </h3>
+                    <div class="project-nav-list project-nav-collapse-content" id="studio-nav-list">
+                        <div class="project-nav-item">
+                            <div class="project-nav-link" data-section="studio-concept">
+                                <span class="nav-number">01</span>
+                                <span class="nav-text">Concept</span>
+                            </div>
+                        </div>
+                        <div class="project-nav-item">
+                            <div class="project-nav-link" data-section="studio-plans">
+                                <span class="nav-number">02</span>
+                                <span class="nav-text">Plans d'étage</span>
+                            </div>
+                        </div>
+                        <div class="project-nav-item">
+                            <div class="project-nav-link" data-section="studio-visuels">
+                                <span class="nav-number">03</span>
+                                <span class="nav-text">Rendu réel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Flèche de navigation vers le bas -->
+        <div class="nav-arrow down" id="arrowDown7">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <!-- Section Menuiserie sur mesure -->
+    <div class="project-detail-section" id="menuiserie-section">
+        <!-- Lignes décoratives -->
+        <div class="project-vertical-line project-left-line"></div>
+        <div class="project-vertical-line project-right-line"></div>
+        <div class="project-horizontal-line project-top-line"></div>
+        <div class="project-horizontal-line project-bottom-line"></div>
+
+        <!-- Flèche de navigation vers le haut -->
+        <div class="nav-arrow up" id="arrowUp7">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+
+        <div class="project-detail-container">
+            <!-- Colonne gauche - Image -->
+            <div class="project-image-column">
+                <div class="project-image-wrapper">
+                    <img src="Links/Menuiserie/1130b488-7102-406a-8707-1bf0f5658a61.JPG" alt="Menuiserie sur mesure" class="project-detail-image">
+                </div>
+            </div>
+            <!-- Colonne droite - Texte -->
+            <div class="project-text-column">
+                <div class="project-header">
+                    <h1 class="project-number">05</h1>
+                    <h2 class="project-title">Menuiserie sur-mesure</h2>
+                </div>
+                <div class="project-description">
+                    <p class="project-intro">
+                        Au sein d'une entreprise de menuiserie, j'ai participé à un projet de design d'intérieur complet pour une maison familiale, commandé par une architecte d'intérieur.
+                    </p>
+                    <p class="project-metaphor">
+                        Le projet comprenait plusieurs éléments sur mesure : un claustra-verrière conçu pour une séparation élégante, une cuisine entièrement pensée pour optimiser ses usages, une unité TV intégrée et divers rangements adaptés aux besoins des habitants.
+                    </p>
+                    <p class="project-atmosphere">
+                        Ma mission était de concevoir les plans d'exécution, servant de pont entre l'idée initiale et la fabrication finale. Ces documents traduisaient les intentions de design en détails techniques précis, permettant aux menuisiers de donner vie au projet en atelier et sur chantier.
+                    </p>
+                </div>
+                <!-- Navigation du projet -->
+                <div class="project-navigation">
+                    <h3 class="project-nav-title project-nav-collapse-header" data-target="menuiserie-nav-list">
+                        Explorer le projet
+                        <i class="fas fa-chevron-down project-nav-collapse-icon"></i>
+                    </h3>
+                    <div class="project-nav-list project-nav-collapse-content" id="menuiserie-nav-list">
+                        <div class="project-nav-item">
+                            <div class="project-nav-link" data-section="menuiserie-plans">
+                                <span class="nav-number">01</span>
+                                <span class="nav-text">Plans d'exécution</span>
+                            </div>
+                        </div>
+                        <div class="project-nav-item">
+                            <div class="project-nav-link" data-section="menuiserie-visuels">
+                                <span class="nav-number">02</span>
+                                <span class="nav-text">Rendu réel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Flèche de navigation vers le bas -->
+        <div class="nav-arrow down" id="arrowDown8">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <!-- Section Contact -->
+    <div class="container" id="contact-section">
+        <!-- Ligne verticale gauche -->
+        <div class="vertical-line left"></div>
+        
+        <!-- Ligne verticale droite -->
+        <div class="vertical-line right"></div>
+        
+        <!-- Flèche de navigation vers le haut -->
+        <div class="nav-arrow up" id="arrowUp8">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+        
+        <!-- Contenu principal -->
+        <div class="content">
+            <!-- Section CONTACT -->
+            <div class="portfolio-section">
+                <div class="portfolio-title">CONTACT</div>
+                <div class="horizontal-line portfolio-line"></div>
+            </div>
+            
+            <!-- Section informations de contact -->
+            <div class="contact-info-section">
+                <div class="horizontal-line contact-info-line"></div>
+                <div class="contact-details">
+                    <div class="contact-detail-item contact-visible">
+                        <div class="contact-detail-label">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            MAIL
+                        </div>
+                        <a href="mailto:manon.gosset77@gmail.com" class="contact-detail-value contact-detail-link">manon.gosset77@gmail.com</a>
+                    </div>
+                    <div class="contact-detail-item contact-visible">
+                        <div class="contact-detail-label">
+                            <i class="fab fa-linkedin-in contact-icon"></i>
+                            LINKEDIN
+                        </div>
+                        <a href="https://www.linkedin.com/in/manon-gosset-708507209/" target="_blank" class="contact-detail-value contact-detail-link">Manon Gosset</a>
+                    </div>
+                    <div class="contact-detail-item contact-visible">
+                        <div class="contact-detail-label">
+                            <i class="fas fa-phone contact-icon"></i>
+                            TELEPHONE
+                        </div>
+                        <a href="tel:+33782336679" class="contact-detail-value contact-detail-link">07.82.33.66.79</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Message de remerciement -->
+            <div class="contact-thank-you">
+                <div class="contact-thank-you-text">Merci</div>
+                <div class="horizontal-line contact-thank-you-line"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pour les images du projet -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Concept</h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-image-container">
+                    <img src="" alt="" class="modal-image" id="modalImage">
+                    <div class="modal-navigation">
+                        <button class="modal-prev" id="modalPrev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="modal-next" id="modalNext">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
